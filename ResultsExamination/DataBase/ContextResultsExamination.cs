@@ -60,6 +60,21 @@ namespace ResultsExamination.DataBase
         public DbSet<ResultsExaminationAct> ResultsExaminationActs { get; set; }
 
         /// <summary>
+        /// Помещения
+        /// </summary>
+        public DbSet<Premise> Premises { get; set; }
+
+        /// <summary>
+        /// Покрытия стен
+        /// </summary>
+        public DbSet<WallСovering> WallСoverings { get; set; }
+
+        /// <summary>
+        /// Типы стены помещения
+        /// </summary>
+        public DbSet<WallPremiseType> WallPremiseTypes { get; set; }
+
+        /// <summary>
         /// Тестирование подключения к базе данных, добавление новых данных, сохранение изменений
         /// </summary>
         public static void Testing()
@@ -111,6 +126,42 @@ namespace ResultsExamination.DataBase
                 context.Files.Add(file);
                 context.SaveChanges();
 
+                int amountWallСoverings = context.WallСoverings.Count();
+                WallСovering wallСovering = new WallСovering();
+                wallСovering.Name = $"WallСovering {amountWallСoverings}";
+                context.WallСoverings.Add(wallСovering);
+                context.SaveChanges();
+
+                int amountwallPremiseType = context.WallPremiseTypes.Count();
+                WallPremiseType wallPremiseType = new WallPremiseType();
+                wallPremiseType.Name = $"wallPremiseType {amountwallPremiseType}";
+                context.WallPremiseTypes.Add(wallPremiseType);
+                context.SaveChanges();
+
+                int amountPremise = context.Premises.Count();
+                Premise premise = new Premise();
+                premise.Name = $"Name {amountPremise}";
+                premise.Num = $"Num {amountPremise}";
+                premise.Height = amountPremise;
+                premise.Width = amountPremise;
+                premise.Depth = amountPremise;
+                premise.Floor = amountPremise;
+                premise.FirstFloor = amountPremise / 2 == 0;
+                premise.LastFloor = amountPremise / 2 != 0;
+                premise.EquipmentStorage = $"EquipmentStorage {amountPremise}";
+                premise.WallsServisePremises = context.WallPremiseTypes?.OrderByDescending(e => e.Id).Take(2).ToList();
+                premise.WallPremiseCorridor = context.WallPremiseTypes?.OrderByDescending(e => e.Id).First();
+                premise.HeightCeiling = amountPremise;
+                premise.FakeHeightCeiling = amountPremise / 2 == 0 ? null : (double?)amountPremise;
+                premise.WallThickness = amountPremise;
+                premise.WallСovering = wallСovering;
+                premise.FakeDepthFloor = amountPremise / 2 == 0 ? null : (double?)amountPremise;
+                premise.PureCeiling = amountPremise / 2 == 0;
+                premise.ExistAntistaticFloor = amountPremise / 2 == 0;
+                premise.DefferenceSizeFloorBetweenCorridor = amountPremise;
+                context.Premises.Add(premise);
+                context.SaveChanges();
+
                 int amountActs= context.ResultsExaminationActs.Count();
                 ResultsExaminationAct act = new ResultsExaminationAct();
                 act.NumObject = $"NumObject {amountActs}";
@@ -122,7 +173,9 @@ namespace ResultsExamination.DataBase
                 act.ShortcomingEliminate = $"ShortcomingEliminate {amountActs}";
                 act.CorrectionPeriodIn = DateTime.Now;
                 act.CorrectionPeriodOut = act.CorrectionPeriodIn.Value.AddMonths(6);
+                act.Premise = premise;
                 act.PlanPremise = file;
+
                 context.ResultsExaminationActs.Add(act);
                 context.SaveChanges();
             }

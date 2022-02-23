@@ -50,9 +50,9 @@ namespace ResultsExamination.DataBase.Tables
             get { return $"{string.Join(",", ActExecutors?.Where(a => a.Executor != null).Select(a => a.Executor.ToString()).ToArray())}"; }
         }
 
-        //[DisplayName("Помещение")]
-        //[ReadOnly(true)]
-        //public virtual Premise Premise { get; set;}
+        [DisplayName("Помещение")]
+        [ReadOnly(true)]
+        public virtual Premise Premise { get; set; }
 
         [DisplayName("Дополнительно")]
         public string Additionally { get; set; }

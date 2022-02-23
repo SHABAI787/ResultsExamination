@@ -63,8 +63,11 @@
     <Compile Include="DataBase\Tables\File.cs" />
     <Compile Include="DataBase\Tables\Person.cs" />
     <Compile Include="DataBase\Tables\Post.cs" />
+    <Compile Include="DataBase\Tables\Premise.cs" />
+    <Compile Include="DataBase\Tables\WallPremiseType.cs" />
     <Compile Include="DataBase\Tables\Recipient.cs" />
     <Compile Include="DataBase\Tables\ResultsExaminationAct.cs" />
+    <Compile Include="DataBase\Tables\WallСovering.cs" />
     <Compile Include="FormBase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +78,10 @@
     <Compile Include="Migrations\202202231322326_FirstMigration.designer.cs">
       <DependentUpon>202202231322326_FirstMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202231612326_AddTables.cs" />
+    <Compile Include="Migrations\202202231612326_AddTables.designer.cs">
+      <DependentUpon>202202231612326_AddTables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -83,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202231322326_FirstMigration.resx">
       <DependentUpon>202202231322326_FirstMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202231612326_AddTables.resx">
+      <DependentUpon>202202231612326_AddTables.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
