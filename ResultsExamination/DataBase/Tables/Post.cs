@@ -19,5 +19,10 @@ namespace ResultsExamination.DataBase.Tables
         public int Id { get; set; }
         [DisplayName("Наименование")]
         public string Name { get; set; }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }
