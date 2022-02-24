@@ -74,6 +74,9 @@ namespace ResultsExamination.DataBase.Tables
         [NotMapped]
         public bool ExistFakeFloor { get { return FakeDepthFloor != null; } }
 
+        [DisplayName("Материал фальшпола")]
+        public virtual FakeFloorMaterial FakeFloorMaterial { get; set; }
+
         [DisplayName("Чистовая отделка потолка")]
         public bool PureCeiling { get; set; }
 
@@ -91,6 +94,9 @@ namespace ResultsExamination.DataBase.Tables
 
         [DisplayName("Исполнение пола")]
         public virtual FloorPerformanse FloorPerformanse { get; set; }
+
+        [DisplayName("Дверь")]
+        public virtual Door Door { get; set; }
 
         public override string ToString()
         {

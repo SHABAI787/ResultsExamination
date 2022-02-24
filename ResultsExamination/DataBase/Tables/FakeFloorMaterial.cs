@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 namespace ResultsExamination.DataBase.Tables
 {
     /// <summary>
-    /// Строительный дефект
+    /// Материал фальшивого пола
     /// </summary>
     [Serializable]
-    [Table("ConstructionDefects")]
-    public class ConstructionDefect
+    [Table("FakeFloorMaterials")]
+    public class FakeFloorMaterial
     {
         [DisplayName("Идентификатор")]
         public int Id { get; set; }

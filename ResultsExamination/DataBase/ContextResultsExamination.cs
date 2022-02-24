@@ -90,6 +90,21 @@ namespace ResultsExamination.DataBase
         public DbSet<FloorType> FloorTypes { get; set; }
 
         /// <summary>
+        /// Двери
+        /// </summary>
+        public DbSet<Door> Doors { get; set; }
+
+        /// <summary>
+        /// Материалы двери
+        /// </summary>
+        public DbSet<DoorMaterial> DoorMaterials { get; set; }
+
+        /// <summary>
+        /// Материал фальшпотолка
+        /// </summary>
+        public DbSet<FakeFloorMaterial> FakeFloorMaterials { get; set; }
+
+        /// <summary>
         /// Тестирование подключения к базе данных, добавление новых данных, сохранение изменений
         /// </summary>
         public static void Testing()
@@ -171,6 +186,32 @@ namespace ResultsExamination.DataBase
                 context.FloorTypes.Add(floorType);
                 context.SaveChanges();
 
+                int amountdoorMaterial = context.DoorMaterials.Count();
+                DoorMaterial doorMaterial = new DoorMaterial();
+                doorMaterial.Name = $"doorMaterial {amountdoorMaterial}";
+                context.DoorMaterials.Add(doorMaterial);
+                context.SaveChanges();
+
+                int amountFakeFloorMaterial = context.FakeFloorMaterials.Count();
+                FakeFloorMaterial fakeFloorMaterials = new FakeFloorMaterial();
+                fakeFloorMaterials.Name = $"fakeFloorMaterials {amountFakeFloorMaterial}";
+                context.FakeFloorMaterials.Add(fakeFloorMaterials);
+                context.SaveChanges();
+
+                int amountDoor = context.Doors.Count();
+                Door door = new Door();
+                door.Material = doorMaterial;
+                door.Single = amountDoor / 2 == 0;
+                door.Dual = amountDoor / 2 != 0;
+                door.ExistLock = amountDoor / 2 == 0;
+                door.ExistSeal = amountDoor / 2 == 0;
+                door.Height = amountDoor;
+                door.Width = amountDoor;
+                door.WidthTambour = amountDoor;
+                door.Thickness = amountDoor;
+                context.Doors.Add(door);
+                context.SaveChanges();
+
                 int amountPremise = context.Premises.Count();
                 Premise premise = new Premise();
                 premise.Name = $"Name {amountPremise}";
@@ -189,12 +230,14 @@ namespace ResultsExamination.DataBase
                 premise.WallThickness = amountPremise;
                 premise.WallСovering = wallСovering;
                 premise.FakeDepthFloor = amountPremise / 2 == 0 ? null : (double?)amountPremise;
+                premise.FakeFloorMaterial = context.FakeFloorMaterials?.OrderByDescending(e => e.Id).First();
                 premise.PureCeiling = amountPremise / 2 == 0;
                 premise.ExistAntistaticFloor = amountPremise / 2 == 0;
                 premise.DefferenceSizeFloorBetweenCorridor = amountPremise;
                 premise.ConstructionDefects = context.ConstructionDefects?.OrderByDescending(e => e.Id).Take(2).ToList(); ;
                 premise.FloorPerformanse = floorPerformanse;
                 premise.FloorType = floorType;
+                premise.Door = door;
                 context.Premises.Add(premise);
                 context.SaveChanges();
 

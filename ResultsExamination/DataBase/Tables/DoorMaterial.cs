@@ -9,16 +9,16 @@ using System.Threading.Tasks;
 namespace ResultsExamination.DataBase.Tables
 {
     /// <summary>
-    /// Строительный дефект
+    /// Материал двери
     /// </summary>
     [Serializable]
-    [Table("ConstructionDefects")]
-    public class ConstructionDefect
+    [Table("DoorMaterials")]
+    public class DoorMaterial
     {
         [DisplayName("Идентификатор")]
         public int Id { get; set; }
 
-        [DisplayName("Наименование")]
+        [DisplayName("Название")]
         public string Name { get; set; }
 
         public override string ToString()
