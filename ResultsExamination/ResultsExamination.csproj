@@ -59,8 +59,11 @@
     <Compile Include="DataBase\ContextResultsExamination.cs" />
     <Compile Include="DataBase\Tables\ActExecutor.cs" />
     <Compile Include="DataBase\Tables\ActRecipient.cs" />
+    <Compile Include="DataBase\Tables\ConstructionDefect.cs" />
     <Compile Include="DataBase\Tables\Executor.cs" />
     <Compile Include="DataBase\Tables\File.cs" />
+    <Compile Include="DataBase\Tables\FloorPerformanse.cs" />
+    <Compile Include="DataBase\Tables\FloorType.cs" />
     <Compile Include="DataBase\Tables\Person.cs" />
     <Compile Include="DataBase\Tables\Post.cs" />
     <Compile Include="DataBase\Tables\Premise.cs" />
@@ -82,6 +85,10 @@
     <Compile Include="Migrations\202202231612326_AddTables.designer.cs">
       <DependentUpon>202202231612326_AddTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202240441426_AddTables_FloorPerformanse_FloorType_ConstructionDefect.cs" />
+    <Compile Include="Migrations\202202240441426_AddTables_FloorPerformanse_FloorType_ConstructionDefect.designer.cs">
+      <DependentUpon>202202240441426_AddTables_FloorPerformanse_FloorType_ConstructionDefect.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -93,6 +100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202231612326_AddTables.resx">
       <DependentUpon>202202231612326_AddTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202240441426_AddTables_FloorPerformanse_FloorType_ConstructionDefect.resx">
+      <DependentUpon>202202240441426_AddTables_FloorPerformanse_FloorType_ConstructionDefect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

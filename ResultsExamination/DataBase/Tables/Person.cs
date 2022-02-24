@@ -24,7 +24,7 @@ namespace ResultsExamination.DataBase.Tables
         [DisplayName("Имя")]
         public string Name { get; set; }
 
-        [DisplayName("Отчёство")]
+        [DisplayName("Отчество")]
         public string MiddleName { get; set; }
 
         [DisplayName("Дата рождения")]

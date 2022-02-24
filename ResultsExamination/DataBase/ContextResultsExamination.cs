@@ -75,6 +75,21 @@ namespace ResultsExamination.DataBase
         public DbSet<WallPremiseType> WallPremiseTypes { get; set; }
 
         /// <summary>
+        /// Строительные дефекты
+        /// </summary>
+        public DbSet<ConstructionDefect> ConstructionDefects { get; set; }
+
+        /// <summary>
+        /// Исполнения пола
+        /// </summary>
+        public DbSet<FloorPerformanse> FloorPerformanses { get; set; }
+
+        /// <summary>
+        /// Виды покрытия пола
+        /// </summary>
+        public DbSet<FloorType> FloorTypes { get; set; }
+
+        /// <summary>
         /// Тестирование подключения к базе данных, добавление новых данных, сохранение изменений
         /// </summary>
         public static void Testing()
@@ -122,7 +137,7 @@ namespace ResultsExamination.DataBase
 
                 int amountFile = context.Files.Count();
                 File file = new File(Path.Combine(Application.StartupPath, $"ResultsExamination.exe.config"));
-                file.Name = $"ResultsExamination{amountFile}.pdb";
+                file.Name = $"ResultsExamination{amountFile}.exe.config";
                 context.Files.Add(file);
                 context.SaveChanges();
 
@@ -136,6 +151,24 @@ namespace ResultsExamination.DataBase
                 WallPremiseType wallPremiseType = new WallPremiseType();
                 wallPremiseType.Name = $"wallPremiseType {amountwallPremiseType}";
                 context.WallPremiseTypes.Add(wallPremiseType);
+                context.SaveChanges();
+
+                int amountConstructionDefects = context.ConstructionDefects.Count();
+                ConstructionDefect constructionDefect = new ConstructionDefect();
+                constructionDefect.Name = $"constructionDefect {amountConstructionDefects}";
+                context.ConstructionDefects.Add(constructionDefect);
+                context.SaveChanges();
+
+                int amountFloorPerformanses = context.FloorPerformanses.Count();
+                FloorPerformanse floorPerformanse = new FloorPerformanse();
+                floorPerformanse.Name = $"floorPerformanse {amountFloorPerformanses}";
+                context.FloorPerformanses.Add(floorPerformanse);
+                context.SaveChanges();
+
+                int amountfloorType = context.FloorTypes.Count();
+                FloorType floorType = new FloorType();
+                floorType.Name = $"floorType {amountfloorType}";
+                context.FloorTypes.Add(floorType);
                 context.SaveChanges();
 
                 int amountPremise = context.Premises.Count();
@@ -159,6 +192,9 @@ namespace ResultsExamination.DataBase
                 premise.PureCeiling = amountPremise / 2 == 0;
                 premise.ExistAntistaticFloor = amountPremise / 2 == 0;
                 premise.DefferenceSizeFloorBetweenCorridor = amountPremise;
+                premise.ConstructionDefects = context.ConstructionDefects?.OrderByDescending(e => e.Id).Take(2).ToList(); ;
+                premise.FloorPerformanse = floorPerformanse;
+                premise.FloorType = floorType;
                 context.Premises.Add(premise);
                 context.SaveChanges();
 

@@ -54,10 +54,10 @@ namespace ResultsExamination.DataBase.Tables
         [DisplayName("Высота до потолка")]
         public double HeightCeiling { get; set; }
 
-        [DisplayName("Высота до подвестного потолка")]
+        [DisplayName("Высота до подвесного потолка")]
         public double? FakeHeightCeiling { get; set; }
 
-        [DisplayName("Наличие подвестного потолка")]
+        [DisplayName("Наличие подвесного потолка")]
         [NotMapped]
         public bool ExistSuspendedCeiling { get { return FakeHeightCeiling != null; } }
 
@@ -77,11 +77,20 @@ namespace ResultsExamination.DataBase.Tables
         [DisplayName("Чистовая отделка потолка")]
         public bool PureCeiling { get; set; }
 
-        [DisplayName("Наличие антитстатического покрытия пола")]
+        [DisplayName("Наличие антистатического покрытия пола")]
         public bool ExistAntistaticFloor { get; set; }
 
-        [DisplayName("Величина перепада пола")] //  между данным помещением и корридором
+        [DisplayName("Величина перепада пола")] //  между данным помещением и коридором
         public double DefferenceSizeFloorBetweenCorridor { get; set; }
+
+        [DisplayName("Строительные дефекты")]
+        public virtual ICollection<ConstructionDefect> ConstructionDefects { get; set; }
+
+        [DisplayName("Покрытие пола")]
+        public virtual FloorType FloorType { get; set; }
+
+        [DisplayName("Исполнение пола")]
+        public virtual FloorPerformanse FloorPerformanse { get; set; }
 
         public override string ToString()
         {
