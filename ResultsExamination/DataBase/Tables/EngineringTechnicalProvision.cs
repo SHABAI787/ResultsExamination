@@ -23,6 +23,33 @@ namespace ResultsExamination.DataBase.Tables
 
         [DisplayName("Система отопления")]
         public HeatingSystemType HeatingSystem { get; set; }
+
+        [DisplayName("Сисема охраны")]
+        public bool ExistSecuritySystem { get; set; }
+
+        [DisplayName("Сисема пожарной сигнализации")]
+        public bool ExistFireAlarm { get; set; }
+
+        [DisplayName("Наличие помещений сверху потребляемые воду")]
+        public bool ExistTopPremisesWaterConsumption { get; set; }
+
+        [DisplayName("Кондиционер")]
+        public virtual Conditioner Conditioner { get; set; }
+
+        [DisplayName("Источник освещения")]
+        public virtual LightSourse LightSourse { get; set; }
+
+        [DisplayName("Жалюзи")]
+        public bool ExistJalousie{ get; set; }
+
+        [DisplayName("Шторы")]
+        public bool ExistCurtains { get; set; }
+
+        [DisplayName("Иные затеняющие устройства")]
+        public bool ExistOtherShading { get; set; }
+
+        [DisplayName("Наличие мест для отвода дренажа")]
+        public bool ExistPlacesWithdrawal { get; set; }
     }
 
     /// <summary>

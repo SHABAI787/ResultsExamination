@@ -113,6 +113,21 @@ namespace ResultsExamination.DataBase
         /// Исполнение защитных решёток
         /// </summary>
         public DbSet<ProtectGridPerfomanse> ProtectGridPerfomanses { get; set; }
+        
+        /// <summary>
+        /// Кондиционеры
+        /// </summary>
+        public DbSet<Conditioner> Conditioners { get; set; }
+
+        /// <summary>
+        /// Источники освещения
+        /// </summary>
+        public DbSet<LightSourse> LightSourses { get; set; }
+
+        /// <summary>
+        ///  Инженерно-технические обеспечения
+        /// </summary>
+        public DbSet<EngineringTechnicalProvision> EngineringTechnicalProvisions { get; set; }
 
         /// <summary>
         /// Тестирование подключения к базе данных, добавление новых данных, сохранение изменений
@@ -240,6 +255,31 @@ namespace ResultsExamination.DataBase
                 context.Windows.Add(window);
                 context.SaveChanges();
 
+                int amountconditioner = context.Conditioners.Count();
+                Conditioner conditioner = new Conditioner();
+                conditioner.SystemFreon = amountconditioner / 2 == 0;
+                conditioner.SystemFankoil = amountconditioner / 2 == 0;
+                conditioner.Name = $"Name {amountconditioner}";
+                context.Conditioners.Add(conditioner);
+                context.SaveChanges();
+
+                int amountlightSourse = context.LightSourses.Count();
+                LightSourse lightSourse = new LightSourse();
+                lightSourse.AmountIncLamps = amountlightSourse;
+                lightSourse.AmountLumLamps = amountlightSourse;
+                lightSourse.AmountPlacesPeople = amountlightSourse;
+                context.LightSourses.Add(lightSourse);
+                context.SaveChanges();
+
+                int amountEngineringTechnicalProvision = context.EngineringTechnicalProvisions.Count();
+                EngineringTechnicalProvision engineringTechnicalProvision = new EngineringTechnicalProvision();
+                engineringTechnicalProvision.Conditioner = conditioner;
+                engineringTechnicalProvision.LightSourse = lightSourse;
+                engineringTechnicalProvision.HeatingSystem = HeatingSystemType.Водяная;
+                engineringTechnicalProvision.Ventilation = VentilationType.Принудительная;
+                context.EngineringTechnicalProvisions.Add(engineringTechnicalProvision);
+                context.SaveChanges();
+
                 int amountPremise = context.Premises.Count();
                 Premise premise = new Premise();
                 premise.Name = $"Name {amountPremise}";
@@ -267,6 +307,7 @@ namespace ResultsExamination.DataBase
                 premise.FloorType = floorType;
                 premise.Door = door;
                 premise.Windows = context.Windows?.OrderByDescending(e => e.Id).Take(2).ToList();
+                premise.EngineringTechnicalProvision = context.EngineringTechnicalProvisions?.OrderByDescending(e => e.Id).First();
                 context.Premises.Add(premise);
                 context.SaveChanges();
 

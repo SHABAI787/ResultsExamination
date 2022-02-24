@@ -59,6 +59,7 @@
     <Compile Include="DataBase\ContextResultsExamination.cs" />
     <Compile Include="DataBase\Tables\ActExecutor.cs" />
     <Compile Include="DataBase\Tables\ActRecipient.cs" />
+    <Compile Include="DataBase\Tables\Conditioner.cs" />
     <Compile Include="DataBase\Tables\ConstructionDefect.cs" />
     <Compile Include="DataBase\Tables\Door.cs" />
     <Compile Include="DataBase\Tables\DoorMaterial.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="DataBase\Tables\File.cs" />
     <Compile Include="DataBase\Tables\FloorPerformanse.cs" />
     <Compile Include="DataBase\Tables\FloorType.cs" />
+    <Compile Include="DataBase\Tables\LightSourse.cs" />
     <Compile Include="DataBase\Tables\Person.cs" />
     <Compile Include="DataBase\Tables\Post.cs" />
     <Compile Include="DataBase\Tables\Premise.cs" />
@@ -103,6 +105,10 @@
     <Compile Include="Migrations\202202240842523_AddTables_Window_ProtectGridPerfomanse.designer.cs">
       <DependentUpon>202202240842523_AddTables_Window_ProtectGridPerfomanse.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202241720452_AddTables_Conditioner_LightSourse_EngineringTechnicalProvision.cs" />
+    <Compile Include="Migrations\202202241720452_AddTables_Conditioner_LightSourse_EngineringTechnicalProvision.designer.cs">
+      <DependentUpon>202202241720452_AddTables_Conditioner_LightSourse_EngineringTechnicalProvision.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -123,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202240842523_AddTables_Window_ProtectGridPerfomanse.resx">
       <DependentUpon>202202240842523_AddTables_Window_ProtectGridPerfomanse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202241720452_AddTables_Conditioner_LightSourse_EngineringTechnicalProvision.resx">
+      <DependentUpon>202202241720452_AddTables_Conditioner_LightSourse_EngineringTechnicalProvision.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
