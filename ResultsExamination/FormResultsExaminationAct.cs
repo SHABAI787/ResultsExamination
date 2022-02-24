@@ -13,7 +13,11 @@ namespace ResultsExamination
         {
             InitializeComponent();
             contex = new ContextResultsExamination();
+            LoadData();
+        }
 
+        private void LoadData()
+        {
             contex.ResultsExaminationActs.Include("ActRecipients")
                 .Include("ActRecipients.Recipient").Include("ActRecipients.Recipient.Person").Include("ActRecipients.Recipient.Post")
                 .Include("ActExecutors").Include("ActExecutors.Executor")
@@ -23,7 +27,6 @@ namespace ResultsExamination
 
             bindingSource1.DataSource = contex.ResultsExaminationActs.Local.ToBindingList();
             dataGridView1.DataSource = bindingSource1;
-
         }
 
         private void FormResultsExaminationAct_Load(object sender, EventArgs e)
@@ -43,6 +46,12 @@ namespace ResultsExamination
                 contex.ResultsExaminationActs.Remove((ResultsExaminationAct)item.DataBoundItem);
             }
             contex.SaveChanges();
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            new FormAddResultsExaminationAct(contex).ShowDialog(this);
+            LoadData();
         }
     }
 }

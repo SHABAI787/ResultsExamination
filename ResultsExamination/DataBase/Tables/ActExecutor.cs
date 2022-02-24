@@ -23,6 +23,7 @@ namespace ResultsExamination.DataBase.Tables
         [Browsable(false)]
         public int? ResultsExaminationActId { get; set; }
 
+        [Browsable(false)]
         [DisplayName("Акт")]
         public virtual ResultsExaminationAct Act { get; set; }
 

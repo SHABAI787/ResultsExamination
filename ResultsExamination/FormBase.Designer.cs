@@ -40,7 +40,7 @@ namespace ResultsExamination
             // buttonResultsExaminationAct
             // 
             this.buttonResultsExaminationAct.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonResultsExaminationAct.Location = new System.Drawing.Point(29, 52);
+            this.buttonResultsExaminationAct.Location = new System.Drawing.Point(49, 47);
             this.buttonResultsExaminationAct.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonResultsExaminationAct.Name = "buttonResultsExaminationAct";
             this.buttonResultsExaminationAct.Size = new System.Drawing.Size(344, 35);
@@ -52,7 +52,7 @@ namespace ResultsExamination
             // buttonPremise
             // 
             this.buttonPremise.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonPremise.Location = new System.Drawing.Point(29, 230);
+            this.buttonPremise.Location = new System.Drawing.Point(49, 225);
             this.buttonPremise.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonPremise.Name = "buttonPremise";
             this.buttonPremise.Size = new System.Drawing.Size(344, 35);
@@ -63,7 +63,7 @@ namespace ResultsExamination
             // buttonEngineringTechnicalProvision
             // 
             this.buttonEngineringTechnicalProvision.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonEngineringTechnicalProvision.Location = new System.Drawing.Point(29, 97);
+            this.buttonEngineringTechnicalProvision.Location = new System.Drawing.Point(49, 92);
             this.buttonEngineringTechnicalProvision.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonEngineringTechnicalProvision.Name = "buttonEngineringTechnicalProvision";
             this.buttonEngineringTechnicalProvision.Size = new System.Drawing.Size(344, 35);
@@ -74,7 +74,7 @@ namespace ResultsExamination
             // buttonPersons
             // 
             this.buttonPersons.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonPersons.Location = new System.Drawing.Point(29, 185);
+            this.buttonPersons.Location = new System.Drawing.Point(49, 180);
             this.buttonPersons.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonPersons.Name = "buttonPersons";
             this.buttonPersons.Size = new System.Drawing.Size(344, 35);
@@ -85,7 +85,7 @@ namespace ResultsExamination
             // buttonConstructionDefect
             // 
             this.buttonConstructionDefect.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonConstructionDefect.Location = new System.Drawing.Point(29, 140);
+            this.buttonConstructionDefect.Location = new System.Drawing.Point(49, 135);
             this.buttonConstructionDefect.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonConstructionDefect.Name = "buttonConstructionDefect";
             this.buttonConstructionDefect.Size = new System.Drawing.Size(344, 35);
@@ -96,7 +96,7 @@ namespace ResultsExamination
             // labelState
             // 
             this.labelState.AutoSize = true;
-            this.labelState.Location = new System.Drawing.Point(112, 16);
+            this.labelState.Location = new System.Drawing.Point(143, 13);
             this.labelState.Name = "labelState";
             this.labelState.Size = new System.Drawing.Size(149, 20);
             this.labelState.TabIndex = 5;
@@ -107,7 +107,7 @@ namespace ResultsExamination
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(407, 274);
+            this.ClientSize = new System.Drawing.Size(445, 274);
             this.Controls.Add(this.labelState);
             this.Controls.Add(this.buttonConstructionDefect);
             this.Controls.Add(this.buttonPersons);
