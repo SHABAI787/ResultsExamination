@@ -62,6 +62,7 @@
     <Compile Include="DataBase\Tables\ConstructionDefect.cs" />
     <Compile Include="DataBase\Tables\Door.cs" />
     <Compile Include="DataBase\Tables\DoorMaterial.cs" />
+    <Compile Include="DataBase\Tables\EngineringTechnicalProvision.cs" />
     <Compile Include="DataBase\Tables\Executor.cs" />
     <Compile Include="DataBase\Tables\FakeFloorMaterial.cs" />
     <Compile Include="DataBase\Tables\File.cs" />

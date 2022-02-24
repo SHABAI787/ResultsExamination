@@ -128,6 +128,9 @@ namespace ResultsExamination.DataBase.Tables
             get { return $"{string.Join(",", ConstructionDefects?.Where(a => a.Name != null).Select(a => a.ToString()).ToArray())}"; }
         }
 
+        [DisplayName("Инженерно-Техническое обеспечение")]
+        public virtual EngineringTechnicalProvision EngineringTechnicalProvision { get; set; }
+
         public override string ToString()
         {
             return $"{Name} {Num} В:{Height} Ш:{Width} Г:{Depth}";
