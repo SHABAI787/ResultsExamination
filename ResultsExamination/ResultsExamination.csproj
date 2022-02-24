@@ -70,10 +70,12 @@
     <Compile Include="DataBase\Tables\Person.cs" />
     <Compile Include="DataBase\Tables\Post.cs" />
     <Compile Include="DataBase\Tables\Premise.cs" />
+    <Compile Include="DataBase\Tables\ProtectGridPerfomanse.cs" />
     <Compile Include="DataBase\Tables\WallPremiseType.cs" />
     <Compile Include="DataBase\Tables\Recipient.cs" />
     <Compile Include="DataBase\Tables\ResultsExaminationAct.cs" />
     <Compile Include="DataBase\Tables\WallСovering.cs" />
+    <Compile Include="DataBase\Tables\Window.cs" />
     <Compile Include="FormBase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +98,10 @@
     <Compile Include="Migrations\202202240632281_AddTables_Door_DoorMaterial_FakeFloorMaterial.designer.cs">
       <DependentUpon>202202240632281_AddTables_Door_DoorMaterial_FakeFloorMaterial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202240842523_AddTables_Window_ProtectGridPerfomanse.cs" />
+    <Compile Include="Migrations\202202240842523_AddTables_Window_ProtectGridPerfomanse.designer.cs">
+      <DependentUpon>202202240842523_AddTables_Window_ProtectGridPerfomanse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -113,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202240632281_AddTables_Door_DoorMaterial_FakeFloorMaterial.resx">
       <DependentUpon>202202240632281_AddTables_Door_DoorMaterial_FakeFloorMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202240842523_AddTables_Window_ProtectGridPerfomanse.resx">
+      <DependentUpon>202202240842523_AddTables_Window_ProtectGridPerfomanse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

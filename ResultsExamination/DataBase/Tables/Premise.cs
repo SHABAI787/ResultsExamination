@@ -45,8 +45,17 @@ namespace ResultsExamination.DataBase.Tables
         [DisplayName("Размещено оборудование")]
         public string EquipmentStorage { get; set; }
 
-        [DisplayName("Стены между служебными помещениями")]
+        [ReadOnly(true)]
+        [Browsable(false)]
         public virtual ICollection<WallPremiseType> WallsServisePremises { get; set; }
+
+        [DisplayName("Стены между служебными помещениями")]
+        [ReadOnly(true)]
+        [NotMapped]
+        public string WallsServisePremisesText
+        {
+            get { return $"{string.Join(",", WallsServisePremises?.Where(a => a.Name != null).Select(a => a.Name).ToArray())}"; }
+        }
 
         [DisplayName("Стена, граничащая с коридором")]
         public virtual WallPremiseType WallPremiseCorridor { get; set; }
@@ -86,8 +95,17 @@ namespace ResultsExamination.DataBase.Tables
         [DisplayName("Величина перепада пола")] //  между данным помещением и коридором
         public double DefferenceSizeFloorBetweenCorridor { get; set; }
 
-        [DisplayName("Строительные дефекты")]
+        [ReadOnly(true)]
+        [Browsable(false)]
         public virtual ICollection<ConstructionDefect> ConstructionDefects { get; set; }
+
+        [DisplayName("Строительные дефекты")]
+        [ReadOnly(true)]
+        [NotMapped]
+        public string ConstructionDefectsText
+        {
+            get { return $"{string.Join(",", ConstructionDefects?.Where(a => a.Name != null).Select(a => a.Name).ToArray())}"; }
+        }
 
         [DisplayName("Покрытие пола")]
         public virtual FloorType FloorType { get; set; }
@@ -97,6 +115,18 @@ namespace ResultsExamination.DataBase.Tables
 
         [DisplayName("Дверь")]
         public virtual Door Door { get; set; }
+
+        [ReadOnly(true)]
+        [Browsable(false)]
+        public virtual ICollection<Window> Windows { get; set; }
+
+        [DisplayName("Окна")]
+        [ReadOnly(true)]
+        [NotMapped]
+        public string WindowsText
+        {
+            get { return $"{string.Join(",", ConstructionDefects?.Where(a => a.Name != null).Select(a => a.ToString()).ToArray())}"; }
+        }
 
         public override string ToString()
         {

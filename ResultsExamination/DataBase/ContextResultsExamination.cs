@@ -105,6 +105,16 @@ namespace ResultsExamination.DataBase
         public DbSet<FakeFloorMaterial> FakeFloorMaterials { get; set; }
 
         /// <summary>
+        /// Окна
+        /// </summary>
+        public DbSet<Window> Windows { get; set; }
+
+        /// <summary>
+        /// Исполнение защитных решёток
+        /// </summary>
+        public DbSet<ProtectGridPerfomanse> ProtectGridPerfomanses { get; set; }
+
+        /// <summary>
         /// Тестирование подключения к базе данных, добавление новых данных, сохранение изменений
         /// </summary>
         public static void Testing()
@@ -212,6 +222,24 @@ namespace ResultsExamination.DataBase
                 context.Doors.Add(door);
                 context.SaveChanges();
 
+                int amountProtectGridPerfomanse = context.ProtectGridPerfomanses.Count();
+                ProtectGridPerfomanse protectGridPerfomanse = new ProtectGridPerfomanse();
+                protectGridPerfomanse.Name = $"protectGridPerfomanse {amountProtectGridPerfomanse}";
+                context.ProtectGridPerfomanses.Add(protectGridPerfomanse);
+                context.SaveChanges();
+
+                int amountWindow = context.Windows.Count();
+                Window window = new Window();
+                window.Height = amountWindow;
+                window.Width = amountWindow;
+                window.IsPlasticMaterial = amountWindow / 2 == 0;
+                window.IsWoodMaterial = amountWindow / 2 != 0;
+                window.AmmountGlass = amountWindow;
+                window.AmmountTransom = amountWindow;
+                window.ProtectGridPerfomanse = protectGridPerfomanse;
+                context.Windows.Add(window);
+                context.SaveChanges();
+
                 int amountPremise = context.Premises.Count();
                 Premise premise = new Premise();
                 premise.Name = $"Name {amountPremise}";
@@ -234,10 +262,11 @@ namespace ResultsExamination.DataBase
                 premise.PureCeiling = amountPremise / 2 == 0;
                 premise.ExistAntistaticFloor = amountPremise / 2 == 0;
                 premise.DefferenceSizeFloorBetweenCorridor = amountPremise;
-                premise.ConstructionDefects = context.ConstructionDefects?.OrderByDescending(e => e.Id).Take(2).ToList(); ;
+                premise.ConstructionDefects = context.ConstructionDefects?.OrderByDescending(e => e.Id).Take(2).ToList();
                 premise.FloorPerformanse = floorPerformanse;
                 premise.FloorType = floorType;
                 premise.Door = door;
+                premise.Windows = context.Windows?.OrderByDescending(e => e.Id).Take(2).ToList();
                 context.Premises.Add(premise);
                 context.SaveChanges();
 
