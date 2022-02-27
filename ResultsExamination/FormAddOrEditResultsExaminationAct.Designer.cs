@@ -61,6 +61,7 @@ namespace ResultsExamination
             this.label8 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.buttonOpenFile = new System.Windows.Forms.Button();
+            this.buttonSavePC = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActRecipients)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
@@ -298,7 +299,7 @@ namespace ResultsExamination
             // 
             this.textBoxFile.Location = new System.Drawing.Point(12, 509);
             this.textBoxFile.Name = "textBoxFile";
-            this.textBoxFile.Size = new System.Drawing.Size(583, 20);
+            this.textBoxFile.Size = new System.Drawing.Size(544, 20);
             this.textBoxFile.TabIndex = 16;
             this.textBoxFile.Text = "План помещения";
             // 
@@ -369,14 +370,30 @@ namespace ResultsExamination
             this.buttonOpenFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonOpenFile.Image = global::ResultsExamination.Properties.Resources.Open_folder;
             this.buttonOpenFile.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonOpenFile.Location = new System.Drawing.Point(594, 508);
+            this.buttonOpenFile.Location = new System.Drawing.Point(562, 492);
             this.buttonOpenFile.Name = "buttonOpenFile";
-            this.buttonOpenFile.Size = new System.Drawing.Size(97, 21);
+            this.buttonOpenFile.Size = new System.Drawing.Size(129, 21);
             this.buttonOpenFile.TabIndex = 17;
             this.buttonOpenFile.Text = "Открыть";
             this.buttonOpenFile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonOpenFile.UseVisualStyleBackColor = true;
             this.buttonOpenFile.Click += new System.EventHandler(this.buttonOpen_Click);
+            // 
+            // buttonSavePC
+            // 
+            this.buttonSavePC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonSavePC.Enabled = false;
+            this.buttonSavePC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonSavePC.Image = global::ResultsExamination.Properties.Resources.Open_folder;
+            this.buttonSavePC.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonSavePC.Location = new System.Drawing.Point(562, 519);
+            this.buttonSavePC.Name = "buttonSavePC";
+            this.buttonSavePC.Size = new System.Drawing.Size(129, 21);
+            this.buttonSavePC.TabIndex = 24;
+            this.buttonSavePC.Text = "Сохранить на ПК";
+            this.buttonSavePC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSavePC.UseVisualStyleBackColor = true;
+            this.buttonSavePC.Click += new System.EventHandler(this.buttonSavePC_Click);
             // 
             // FormAddOrEditResultsExaminationAct
             // 
@@ -384,6 +401,7 @@ namespace ResultsExamination
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(703, 608);
+            this.Controls.Add(this.buttonSavePC);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -458,5 +476,6 @@ namespace ResultsExamination
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button buttonSavePC;
     }
 }

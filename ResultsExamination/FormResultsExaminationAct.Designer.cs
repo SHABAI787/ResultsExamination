@@ -33,23 +33,24 @@ namespace ResultsExamination
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormResultsExaminationAct));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.результатыОбследованийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.помещенийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.инженернотехническоеОбеспечениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.строительныеДефектыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.физическиеЛицаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчётыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.результатыОбследованийToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -98,21 +99,6 @@ namespace ResultsExamination
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
             this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.результатыОбследованийToolStripMenuItem,
-            this.помещенийToolStripMenuItem,
-            this.инженернотехническоеОбеспечениеToolStripMenuItem,
-            this.строительныеДефектыToolStripMenuItem,
-            this.физическиеЛицаToolStripMenuItem,
-            this.отчётыToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(904, 24);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
             // bindingNavigatorAddNewItem
             // 
             this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -142,6 +128,21 @@ namespace ResultsExamination
             this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton1.Text = "Экспорт в Excel";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.результатыОбследованийToolStripMenuItem,
+            this.помещенийToolStripMenuItem,
+            this.инженернотехническоеОбеспечениеToolStripMenuItem,
+            this.строительныеДефектыToolStripMenuItem,
+            this.физическиеЛицаToolStripMenuItem,
+            this.отчётыToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(904, 24);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
             // 
             // результатыОбследованийToolStripMenuItem
             // 
@@ -185,10 +186,19 @@ namespace ResultsExamination
             // 
             // отчётыToolStripMenuItem
             // 
+            this.отчётыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.результатыОбследованийToolStripMenuItem1});
             this.отчётыToolStripMenuItem.Image = global::ResultsExamination.Properties.Resources.reports;
             this.отчётыToolStripMenuItem.Name = "отчётыToolStripMenuItem";
             this.отчётыToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
             this.отчётыToolStripMenuItem.Text = "Отчёты";
+            // 
+            // результатыОбследованийToolStripMenuItem1
+            // 
+            this.результатыОбследованийToolStripMenuItem1.Name = "результатыОбследованийToolStripMenuItem1";
+            this.результатыОбследованийToolStripMenuItem1.Size = new System.Drawing.Size(218, 22);
+            this.результатыОбследованийToolStripMenuItem1.Text = "Результаты обследований";
+            this.результатыОбследованийToolStripMenuItem1.Click += new System.EventHandler(this.результатыОбследованийToolStripMenuItem1_Click);
             // 
             // FormResultsExaminationAct
             // 
@@ -207,9 +217,9 @@ namespace ResultsExamination
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,5 +241,6 @@ namespace ResultsExamination
         private System.Windows.Forms.ToolStripMenuItem строительныеДефектыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem физическиеЛицаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem отчётыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem результатыОбследованийToolStripMenuItem1;
     }
 }

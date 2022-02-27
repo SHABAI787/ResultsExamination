@@ -57,6 +57,7 @@ namespace ResultsExamination
             dateTimePickerIn.Value = this.resultsExaminationAct.CorrectionPeriodIn.HasValue ? this.resultsExaminationAct.CorrectionPeriodIn.Value : DateTime.Now;
             dateTimePickerOut.Value = this.resultsExaminationAct.CorrectionPeriodOut.HasValue ? this.resultsExaminationAct.CorrectionPeriodOut.Value : DateTime.Now.AddMonths(3);
             textBoxFile.Text = this.resultsExaminationAct.PlanPremise?.Name;
+            buttonSavePC.Enabled = this.resultsExaminationAct.PlanPremise != null;
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -72,6 +73,7 @@ namespace ResultsExamination
             if (System.IO.File.Exists(textBoxFile.Text))
             {
                 File file = new File(textBoxFile.Text);
+                file.Name = Path.GetFileName(textBoxFile.Text);
                 resultsExaminationAct.PlanPremise = file;
             }
 
@@ -129,6 +131,18 @@ namespace ResultsExamination
 
             foreach (var item in delItems)
                 executor.Remove(item);
+        }
+
+        private void buttonSavePC_Click(object sender, EventArgs e)
+        {
+            using(SaveFileDialog ds = new SaveFileDialog())
+            {
+                ds.FileName = resultsExaminationAct.PlanPremise.Name;
+                if (ds.ShowDialog() == DialogResult.OK)
+                {
+                    resultsExaminationAct.PlanPremise.Save(ds.FileName);
+                }
+            }
         }
     }
 }

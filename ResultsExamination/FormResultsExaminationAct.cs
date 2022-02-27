@@ -80,5 +80,10 @@ namespace ResultsExamination
         {
             new FormPersons(contex).Show();
         }
+
+        private void результатыОбследованийToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            new FormReportResultsExamination(contex).Show();
+        }
     }
 }
