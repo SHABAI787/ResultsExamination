@@ -30,11 +30,6 @@ namespace ResultsExamination
             dataGridView1.DataSource = bindingSource1;
         }
 
-        private void FormResultsExaminationAct_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             dataGridView1.ExportToExcel();
@@ -59,6 +54,11 @@ namespace ResultsExamination
         {
             if(e.RowIndex >= 0)
                 new FormAddOrEditResultsExaminationAct(contex, (ResultsExaminationAct)dataGridView1.Rows[e.RowIndex].DataBoundItem).Show();
+        }
+
+        private void результатыОбследованийToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }

@@ -36,11 +36,9 @@ namespace ResultsExamination
             this.dataGridViewActRecipients = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonRecipients = new System.Windows.Forms.ToolStripComboBox();
             this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonExecutors = new System.Windows.Forms.ToolStripComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridViewActExecutors = new System.Windows.Forms.DataGridView();
             this.comboBoxPremise = new System.Windows.Forms.ComboBox();
@@ -52,15 +50,17 @@ namespace ResultsExamination
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePickerOut = new System.Windows.Forms.DateTimePicker();
             this.textBoxFile = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.toolStripButtonRecipients = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripButtonExecutors = new System.Windows.Forms.ToolStripComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.buttonOpenFile = new System.Windows.Forms.Button();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActRecipients)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
@@ -73,7 +73,7 @@ namespace ResultsExamination
             // 
             this.textBoxNumObject.Location = new System.Drawing.Point(113, 12);
             this.textBoxNumObject.Name = "textBoxNumObject";
-            this.textBoxNumObject.Size = new System.Drawing.Size(149, 20);
+            this.textBoxNumObject.Size = new System.Drawing.Size(226, 20);
             this.textBoxNumObject.TabIndex = 0;
             this.textBoxNumObject.Text = "Номер объекта";
             // 
@@ -81,7 +81,7 @@ namespace ResultsExamination
             // 
             this.textBoxAddresObject.Location = new System.Drawing.Point(113, 38);
             this.textBoxAddresObject.Name = "textBoxAddresObject";
-            this.textBoxAddresObject.Size = new System.Drawing.Size(327, 20);
+            this.textBoxAddresObject.Size = new System.Drawing.Size(578, 20);
             this.textBoxAddresObject.TabIndex = 1;
             this.textBoxAddresObject.Text = "Адрес объекта";
             // 
@@ -131,25 +131,10 @@ namespace ResultsExamination
             this.bindingNavigator1.TabIndex = 4;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
-            // bindingNavigatorAddNewItem
+            // toolStripButtonRecipients
             // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Добавить";
-            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Удалить";
-            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
+            this.toolStripButtonRecipients.Name = "toolStripButtonRecipients";
+            this.toolStripButtonRecipients.Size = new System.Drawing.Size(150, 25);
             // 
             // bindingNavigator2
             // 
@@ -173,25 +158,10 @@ namespace ResultsExamination
             this.bindingNavigator2.TabIndex = 7;
             this.bindingNavigator2.Text = "bindingNavigator2";
             // 
-            // toolStripButton1
+            // toolStripButtonExecutors
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "Добавить";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "Удалить";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            this.toolStripButtonExecutors.Name = "toolStripButtonExecutors";
+            this.toolStripButtonExecutors.Size = new System.Drawing.Size(150, 25);
             // 
             // label2
             // 
@@ -222,7 +192,7 @@ namespace ResultsExamination
             this.comboBoxPremise.FormattingEnabled = true;
             this.comboBoxPremise.Location = new System.Drawing.Point(12, 262);
             this.comboBoxPremise.Name = "comboBoxPremise";
-            this.comboBoxPremise.Size = new System.Drawing.Size(598, 21);
+            this.comboBoxPremise.Size = new System.Drawing.Size(583, 21);
             this.comboBoxPremise.TabIndex = 8;
             this.comboBoxPremise.Text = "Помещение";
             // 
@@ -286,22 +256,11 @@ namespace ResultsExamination
             // 
             // textBoxFile
             // 
-            this.textBoxFile.Location = new System.Drawing.Point(12, 512);
+            this.textBoxFile.Location = new System.Drawing.Point(12, 509);
             this.textBoxFile.Name = "textBoxFile";
-            this.textBoxFile.Size = new System.Drawing.Size(598, 20);
+            this.textBoxFile.Size = new System.Drawing.Size(583, 20);
             this.textBoxFile.TabIndex = 16;
             this.textBoxFile.Text = "План помещения";
-            // 
-            // button1
-            // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(607, 512);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 20);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Открыть";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.buttonOpen_Click);
             // 
             // buttonAdd
             // 
@@ -314,26 +273,6 @@ namespace ResultsExamination
             this.buttonAdd.Text = "Сохранить";
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
-            // 
-            // button3
-            // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Location = new System.Drawing.Point(607, 262);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(84, 21);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "Добавить";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // toolStripButtonRecipients
-            // 
-            this.toolStripButtonRecipients.Name = "toolStripButtonRecipients";
-            this.toolStripButtonRecipients.Size = new System.Drawing.Size(150, 25);
-            // 
-            // toolStripButtonExecutors
-            // 
-            this.toolStripButtonExecutors.Name = "toolStripButtonExecutors";
-            this.toolStripButtonExecutors.Size = new System.Drawing.Size(150, 25);
             // 
             // label5
             // 
@@ -371,6 +310,74 @@ namespace ResultsExamination
             this.label8.TabIndex = 23;
             this.label8.Text = "Недостатки для устранения:";
             // 
+            // button3
+            // 
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button3.Image = global::ResultsExamination.Properties.Resources.addItem;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.Location = new System.Drawing.Point(594, 262);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(97, 21);
+            this.button3.TabIndex = 19;
+            this.button3.Text = "Добавить";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // buttonOpenFile
+            // 
+            this.buttonOpenFile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonOpenFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonOpenFile.Image = global::ResultsExamination.Properties.Resources.Open_folder;
+            this.buttonOpenFile.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonOpenFile.Location = new System.Drawing.Point(594, 508);
+            this.buttonOpenFile.Name = "buttonOpenFile";
+            this.buttonOpenFile.Size = new System.Drawing.Size(97, 21);
+            this.buttonOpenFile.TabIndex = 17;
+            this.buttonOpenFile.Text = "Открыть";
+            this.buttonOpenFile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonOpenFile.UseVisualStyleBackColor = true;
+            this.buttonOpenFile.Click += new System.EventHandler(this.buttonOpen_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "Добавить";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton2.Text = "Удалить";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Добавить";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Удалить";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
+            // 
             // FormAddOrEditResultsExaminationAct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -382,7 +389,7 @@ namespace ResultsExamination
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.buttonAdd);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonOpenFile);
             this.Controls.Add(this.textBoxFile);
             this.Controls.Add(this.dateTimePickerOut);
             this.Controls.Add(this.label4);
@@ -401,6 +408,7 @@ namespace ResultsExamination
             this.Controls.Add(this.textBoxAddresObject);
             this.Controls.Add(this.textBoxNumObject);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FormAddOrEditResultsExaminationAct";
             this.Text = "Добавление результатов обследования";
@@ -441,7 +449,7 @@ namespace ResultsExamination
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateTimePickerOut;
         private System.Windows.Forms.TextBox textBoxFile;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonOpenFile;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ToolStripComboBox toolStripButtonRecipients;

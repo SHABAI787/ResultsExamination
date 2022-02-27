@@ -181,6 +181,33 @@
   <ItemGroup>
     <None Include="Resources\icons8-microsoft-excel-23.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-results-25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\result_clipboard_check_mark_list_icon_153875.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diagram-06_24511.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\injener.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\defects.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reports.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Open-folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addItem.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
