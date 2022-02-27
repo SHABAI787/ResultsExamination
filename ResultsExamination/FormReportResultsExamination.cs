@@ -28,23 +28,23 @@ namespace ResultsExamination
                 .Include("ActExecutors.Executor.Person").Include("ActExecutors.Executor.Post")
                 .Include("Premise")
                 .Include("PlanPremise").Load();
+        }
 
-            foreach (var act in this.context.ResultsExaminationActs)
+        private void buttonForm_Click(object sender, EventArgs e)
+        {
+            foreach (var act in this.context.ResultsExaminationActs.Where(a => a.CorrectionPeriodIn >= dateTimePickerDateIn.Value && a.CorrectionPeriodOut <= dateTimePickerDateOut.Value))
             {
-                sourseReport.Add(new SourseReportResultExamination() 
-                { 
+                sourseReport.Add(new SourseReportResultExamination()
+                {
                     Itog = act.CommissionConclusion ? "Помещение соответствует" : "Не соответствует",
                     Name = act.NumObject,
                     Period = $"{(act.CorrectionPeriodIn.HasValue ? act.CorrectionPeriodIn.Value.ToShortDateString() : "")} " +
-                    $"- {(act.CorrectionPeriodOut.HasValue ? act.CorrectionPeriodOut.Value.ToShortDateString() : "")}" 
+                    $"- {(act.CorrectionPeriodOut.HasValue ? act.CorrectionPeriodOut.Value.ToShortDateString() : "")}"
                 });
             }
 
             SourseReportResultExaminationBindingSource.DataSource = sourseReport;
-        }
 
-        private void FormReportResultsExamination_Load(object sender, EventArgs e)
-        {
             this.reportViewer1.RefreshReport();
         }
     }
