@@ -54,7 +54,14 @@ namespace ResultsExamination.DataBase.Tables
         [NotMapped]
         public string WallsServisePremisesText
         {
-            get { return $"{string.Join(",", WallsServisePremises?.Where(a => a.Name != null).Select(a => a.Name).ToArray())}"; }
+            get 
+            {
+                string text = string.Empty;
+                if(WallsServisePremises != null && WallsServisePremises.Any(a => a.Name != null))
+                    text = $"{string.Join(",", WallsServisePremises.Where(a => a.Name != null).Select(a => a.Name).ToArray())}";
+
+                return text;
+            }
         }
 
         [DisplayName("Стена, граничащая с коридором")]
@@ -104,7 +111,14 @@ namespace ResultsExamination.DataBase.Tables
         [NotMapped]
         public string ConstructionDefectsText
         {
-            get { return $"{string.Join(",", ConstructionDefects?.Where(a => a.Name != null).Select(a => a.Name).ToArray())}"; }
+            get
+            {
+                string text = string.Empty;
+                if (ConstructionDefects != null && ConstructionDefects.Any(a => a.Name != null))
+                    text = $"{string.Join(",", ConstructionDefects.Where(a => a.Name != null).Select(a => a.Name).ToArray())}";
+
+                return text;
+            }
         }
 
         [DisplayName("Покрытие пола")]
@@ -125,7 +139,14 @@ namespace ResultsExamination.DataBase.Tables
         [NotMapped]
         public string WindowsText
         {
-            get { return $"{string.Join(",", Windows?.Select(a => a.ToString()).ToArray())}"; }
+            get 
+            {
+                string text = string.Empty;
+                if (Windows != null && Windows.Count > 0)
+                    text = $"{string.Join(",", Windows.Select(a => a.ToString()).ToArray())}";
+               
+                return text;
+            }
         }
 
         [DisplayName("Инженерно-Техническое обеспечение")]

@@ -46,9 +46,7 @@ namespace ResultsExamination
 
                 foreach (var item in this.resultsExaminationAct.ActRecipients.Select(r => r.Recipient))
                     recipient.Add(item);
-                //dataGridViewActExecutors.DataSource = new ObservableCollection<Executor>(this.resultsExaminationAct.ActExecutors.Select(r => r.Executor)).ToBindingList();
-                //dataGridViewActRecipients.DataSource = new ObservableCollection<Recipient>(this.resultsExaminationAct.ActRecipients.Select(r => r.Recipient)).ToBindingList();
-                comboBoxPremise.SelectedItem = this.resultsExaminationAct.Premise;
+               comboBoxPremise.SelectedItem = this.resultsExaminationAct.Premise;
             }
 
             textBoxNumObject.DataBindings.Add(new Binding("Text", this.resultsExaminationAct, "NumObject"));
@@ -59,11 +57,6 @@ namespace ResultsExamination
             dateTimePickerIn.Value = this.resultsExaminationAct.CorrectionPeriodIn.HasValue ? this.resultsExaminationAct.CorrectionPeriodIn.Value : DateTime.Now;
             dateTimePickerOut.Value = this.resultsExaminationAct.CorrectionPeriodOut.HasValue ? this.resultsExaminationAct.CorrectionPeriodOut.Value : DateTime.Now.AddMonths(3);
             textBoxFile.Text = this.resultsExaminationAct.PlanPremise?.Name;
-        }
-
-        private void FormAddResultsExaminationAct_Load(object sender, EventArgs e)
-        {
-            
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)

@@ -59,5 +59,18 @@ namespace ResultsExamination
             }
             contex.SaveChanges();
         }
+
+        private void bindingNavigatorAddNewItem_Click_1(object sender, EventArgs e)
+        {
+            new FormAddOrEditPremise(contex).Show();
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex >= 0)
+            {
+                new FormAddOrEditPremise(contex, (Premise)dataGridView1.Rows[e.RowIndex].DataBoundItem).Show();
+            }
+        }
     }
 }

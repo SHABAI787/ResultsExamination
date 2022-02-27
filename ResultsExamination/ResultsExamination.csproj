@@ -81,6 +81,12 @@
     <Compile Include="DataBase\Tables\ResultsExaminationAct.cs" />
     <Compile Include="DataBase\Tables\WallСovering.cs" />
     <Compile Include="DataBase\Tables\Window.cs" />
+    <Compile Include="FormAddOrEditPremise.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddOrEditPremise.Designer.cs">
+      <DependentUpon>FormAddOrEditPremise.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAddOrEditResultsExaminationAct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResExtensions.cs" />
+    <EmbeddedResource Include="FormAddOrEditPremise.resx">
+      <DependentUpon>FormAddOrEditPremise.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAddOrEditResultsExaminationAct.resx">
       <DependentUpon>FormAddOrEditResultsExaminationAct.cs</DependentUpon>
     </EmbeddedResource>

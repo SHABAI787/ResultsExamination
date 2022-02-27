@@ -413,7 +413,6 @@ namespace ResultsExamination
             this.MaximizeBox = false;
             this.Name = "FormAddOrEditResultsExaminationAct";
             this.Text = "Добавление результатов обследования";
-            this.Load += new System.EventHandler(this.FormAddResultsExaminationAct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActRecipients)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
