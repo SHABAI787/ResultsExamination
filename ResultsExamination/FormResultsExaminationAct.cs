@@ -65,5 +65,10 @@ namespace ResultsExamination
         {
             new FormPremises(contex).Show();
         }
+
+        private void инженернотехническоеОбеспечениеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormEngineringTechnicalProvisions(contex).Show();
+        }
     }
 }
