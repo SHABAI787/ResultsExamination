@@ -75,5 +75,10 @@ namespace ResultsExamination
         {
             new FormConstructionDefects(contex).Show();
         }
+
+        private void физическиеЛицаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormPersons(contex).Show();
+        }
     }
 }

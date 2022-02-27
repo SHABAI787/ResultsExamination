@@ -134,7 +134,7 @@ namespace ResultsExamination
             // toolStripButtonRecipients
             // 
             this.toolStripButtonRecipients.Name = "toolStripButtonRecipients";
-            this.toolStripButtonRecipients.Size = new System.Drawing.Size(150, 25);
+            this.toolStripButtonRecipients.Size = new System.Drawing.Size(200, 25);
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -181,7 +181,7 @@ namespace ResultsExamination
             // toolStripButtonExecutors
             // 
             this.toolStripButtonExecutors.Name = "toolStripButtonExecutors";
-            this.toolStripButtonExecutors.Size = new System.Drawing.Size(150, 25);
+            this.toolStripButtonExecutors.Size = new System.Drawing.Size(200, 25);
             // 
             // toolStripButton1
             // 

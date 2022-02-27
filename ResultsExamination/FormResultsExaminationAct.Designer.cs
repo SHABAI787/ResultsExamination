@@ -181,6 +181,7 @@ namespace ResultsExamination
             this.физическиеЛицаToolStripMenuItem.Name = "физическиеЛицаToolStripMenuItem";
             this.физическиеЛицаToolStripMenuItem.Size = new System.Drawing.Size(131, 20);
             this.физическиеЛицаToolStripMenuItem.Text = "Физические лица";
+            this.физическиеЛицаToolStripMenuItem.Click += new System.EventHandler(this.физическиеЛицаToolStripMenuItem_Click);
             // 
             // отчётыToolStripMenuItem
             // 
