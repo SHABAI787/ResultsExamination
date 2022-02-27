@@ -60,5 +60,10 @@ namespace ResultsExamination
         {
             LoadData();
         }
+
+        private void помещенийToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormPremises(contex).Show();
+        }
     }
 }

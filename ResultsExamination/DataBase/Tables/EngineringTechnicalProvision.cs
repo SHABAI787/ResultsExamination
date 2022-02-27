@@ -50,6 +50,11 @@ namespace ResultsExamination.DataBase.Tables
 
         [DisplayName("Наличие мест для отвода дренажа")]
         public bool ExistPlacesWithdrawal { get; set; }
+
+        public override string ToString()
+        {
+            return $"Вентиляция:{Ventilation} Отопление:{HeatingSystem} Система охраны:{ExistSecuritySystem}";
+        }
     }
 
     /// <summary>

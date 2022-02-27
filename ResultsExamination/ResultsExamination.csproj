@@ -87,11 +87,11 @@
     <Compile Include="FormAddOrEditResultsExaminationAct.Designer.cs">
       <DependentUpon>FormAddOrEditResultsExaminationAct.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormBase.cs">
+    <Compile Include="FormPremises.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormBase.Designer.cs">
-      <DependentUpon>FormBase.cs</DependentUpon>
+    <Compile Include="FormPremises.Designer.cs">
+      <DependentUpon>FormPremises.cs</DependentUpon>
     </Compile>
     <Compile Include="FormResultsExaminationAct.cs">
       <SubType>Form</SubType>
@@ -130,8 +130,8 @@
     <EmbeddedResource Include="FormAddOrEditResultsExaminationAct.resx">
       <DependentUpon>FormAddOrEditResultsExaminationAct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormBase.resx">
-      <DependentUpon>FormBase.cs</DependentUpon>
+    <EmbeddedResource Include="FormPremises.resx">
+      <DependentUpon>FormPremises.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormResultsExaminationAct.resx">
       <DependentUpon>FormResultsExaminationAct.cs</DependentUpon>

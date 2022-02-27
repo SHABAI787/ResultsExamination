@@ -125,7 +125,7 @@ namespace ResultsExamination.DataBase.Tables
         [NotMapped]
         public string WindowsText
         {
-            get { return $"{string.Join(",", ConstructionDefects?.Where(a => a.Name != null).Select(a => a.ToString()).ToArray())}"; }
+            get { return $"{string.Join(",", Windows?.Select(a => a.ToString()).ToArray())}"; }
         }
 
         [DisplayName("Инженерно-Техническое обеспечение")]

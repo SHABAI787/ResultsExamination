@@ -35,7 +35,6 @@ namespace ResultsExamination
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.отчётыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
@@ -45,6 +44,7 @@ namespace ResultsExamination
             this.инженернотехническоеОбеспечениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.строительныеДефектыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.физическиеЛицаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.отчётыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
@@ -113,13 +113,6 @@ namespace ResultsExamination
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // отчётыToolStripMenuItem
-            // 
-            this.отчётыToolStripMenuItem.Image = global::ResultsExamination.Properties.Resources.reports;
-            this.отчётыToolStripMenuItem.Name = "отчётыToolStripMenuItem";
-            this.отчётыToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
-            this.отчётыToolStripMenuItem.Text = "Отчёты";
-            // 
             // bindingNavigatorAddNewItem
             // 
             this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -164,6 +157,7 @@ namespace ResultsExamination
             this.помещенийToolStripMenuItem.Name = "помещенийToolStripMenuItem";
             this.помещенийToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
             this.помещенийToolStripMenuItem.Text = "Объекты";
+            this.помещенийToolStripMenuItem.Click += new System.EventHandler(this.помещенийToolStripMenuItem_Click);
             // 
             // инженернотехническоеОбеспечениеToolStripMenuItem
             // 
@@ -185,6 +179,13 @@ namespace ResultsExamination
             this.физическиеЛицаToolStripMenuItem.Name = "физическиеЛицаToolStripMenuItem";
             this.физическиеЛицаToolStripMenuItem.Size = new System.Drawing.Size(131, 20);
             this.физическиеЛицаToolStripMenuItem.Text = "Физические лица";
+            // 
+            // отчётыToolStripMenuItem
+            // 
+            this.отчётыToolStripMenuItem.Image = global::ResultsExamination.Properties.Resources.reports;
+            this.отчётыToolStripMenuItem.Name = "отчётыToolStripMenuItem";
+            this.отчётыToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.отчётыToolStripMenuItem.Text = "Отчёты";
             // 
             // FormResultsExaminationAct
             // 
