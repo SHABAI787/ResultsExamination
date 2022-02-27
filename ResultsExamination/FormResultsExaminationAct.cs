@@ -70,5 +70,10 @@ namespace ResultsExamination
         {
             new FormEngineringTechnicalProvisions(contex).Show();
         }
+
+        private void строительныеДефектыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormConstructionDefects(contex).Show();
+        }
     }
 }
