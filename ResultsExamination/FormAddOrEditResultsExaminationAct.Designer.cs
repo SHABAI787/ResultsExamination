@@ -1,7 +1,7 @@
 ﻿
 namespace ResultsExamination
 {
-    partial class FormAddResultsExaminationAct
+    partial class FormAddOrEditResultsExaminationAct
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace ResultsExamination
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddResultsExaminationAct));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddOrEditResultsExaminationAct));
             this.textBoxNumObject = new System.Windows.Forms.TextBox();
             this.textBoxAddresObject = new System.Windows.Forms.TextBox();
             this.dataGridViewActRecipients = new System.Windows.Forms.DataGridView();
@@ -47,14 +47,20 @@ namespace ResultsExamination
             this.richTextBoxAdditionally = new System.Windows.Forms.RichTextBox();
             this.checkBoxCommissionConclusion = new System.Windows.Forms.CheckBox();
             this.richTextBoxShortcomingEliminate = new System.Windows.Forms.RichTextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerIn = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.dateTimePickerOut = new System.Windows.Forms.DateTimePicker();
+            this.textBoxFile = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonAdd = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.toolStripButtonRecipients = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripButtonExecutors = new System.Windows.Forms.ToolStripComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActRecipients)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
@@ -65,7 +71,7 @@ namespace ResultsExamination
             // 
             // textBoxNumObject
             // 
-            this.textBoxNumObject.Location = new System.Drawing.Point(12, 12);
+            this.textBoxNumObject.Location = new System.Drawing.Point(113, 12);
             this.textBoxNumObject.Name = "textBoxNumObject";
             this.textBoxNumObject.Size = new System.Drawing.Size(149, 20);
             this.textBoxNumObject.TabIndex = 0;
@@ -73,7 +79,7 @@ namespace ResultsExamination
             // 
             // textBoxAddresObject
             // 
-            this.textBoxAddresObject.Location = new System.Drawing.Point(12, 38);
+            this.textBoxAddresObject.Location = new System.Drawing.Point(113, 38);
             this.textBoxAddresObject.Name = "textBoxAddresObject";
             this.textBoxAddresObject.Size = new System.Drawing.Size(327, 20);
             this.textBoxAddresObject.TabIndex = 1;
@@ -90,6 +96,7 @@ namespace ResultsExamination
             this.dataGridViewActRecipients.Location = new System.Drawing.Point(12, 106);
             this.dataGridViewActRecipients.Name = "dataGridViewActRecipients";
             this.dataGridViewActRecipients.ReadOnly = true;
+            this.dataGridViewActRecipients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewActRecipients.Size = new System.Drawing.Size(327, 150);
             this.dataGridViewActRecipients.TabIndex = 2;
             // 
@@ -110,6 +117,7 @@ namespace ResultsExamination
             this.bindingNavigator1.DeleteItem = null;
             this.bindingNavigator1.Dock = System.Windows.Forms.DockStyle.None;
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonRecipients,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem});
             this.bindingNavigator1.Location = new System.Drawing.Point(12, 78);
@@ -131,6 +139,7 @@ namespace ResultsExamination
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Добавить";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorDeleteItem
             // 
@@ -140,6 +149,7 @@ namespace ResultsExamination
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Удалить";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigator2
             // 
@@ -149,6 +159,7 @@ namespace ResultsExamination
             this.bindingNavigator2.DeleteItem = null;
             this.bindingNavigator2.Dock = System.Windows.Forms.DockStyle.None;
             this.bindingNavigator2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonExecutors,
             this.toolStripButton1,
             this.toolStripButton2});
             this.bindingNavigator2.Location = new System.Drawing.Point(364, 78);
@@ -170,6 +181,7 @@ namespace ResultsExamination
             this.toolStripButton1.RightToLeftAutoMirrorImage = true;
             this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton1.Text = "Добавить";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripButton2
             // 
@@ -179,6 +191,7 @@ namespace ResultsExamination
             this.toolStripButton2.RightToLeftAutoMirrorImage = true;
             this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton2.Text = "Удалить";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // label2
             // 
@@ -200,15 +213,16 @@ namespace ResultsExamination
             this.dataGridViewActExecutors.Location = new System.Drawing.Point(364, 106);
             this.dataGridViewActExecutors.Name = "dataGridViewActExecutors";
             this.dataGridViewActExecutors.ReadOnly = true;
+            this.dataGridViewActExecutors.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewActExecutors.Size = new System.Drawing.Size(327, 150);
             this.dataGridViewActExecutors.TabIndex = 5;
             // 
             // comboBoxPremise
             // 
             this.comboBoxPremise.FormattingEnabled = true;
-            this.comboBoxPremise.Location = new System.Drawing.Point(12, 274);
+            this.comboBoxPremise.Location = new System.Drawing.Point(12, 262);
             this.comboBoxPremise.Name = "comboBoxPremise";
-            this.comboBoxPremise.Size = new System.Drawing.Size(614, 21);
+            this.comboBoxPremise.Size = new System.Drawing.Size(598, 21);
             this.comboBoxPremise.TabIndex = 8;
             this.comboBoxPremise.Text = "Помещение";
             // 
@@ -216,14 +230,14 @@ namespace ResultsExamination
             // 
             this.richTextBoxAdditionally.Location = new System.Drawing.Point(12, 301);
             this.richTextBoxAdditionally.Name = "richTextBoxAdditionally";
-            this.richTextBoxAdditionally.Size = new System.Drawing.Size(679, 72);
+            this.richTextBoxAdditionally.Size = new System.Drawing.Size(679, 62);
             this.richTextBoxAdditionally.TabIndex = 9;
             this.richTextBoxAdditionally.Text = "Дополнительно";
             // 
             // checkBoxCommissionConclusion
             // 
             this.checkBoxCommissionConclusion.AutoSize = true;
-            this.checkBoxCommissionConclusion.Location = new System.Drawing.Point(12, 379);
+            this.checkBoxCommissionConclusion.Location = new System.Drawing.Point(12, 369);
             this.checkBoxCommissionConclusion.Name = "checkBoxCommissionConclusion";
             this.checkBoxCommissionConclusion.Size = new System.Drawing.Size(313, 17);
             this.checkBoxCommissionConclusion.TabIndex = 10;
@@ -232,18 +246,18 @@ namespace ResultsExamination
             // 
             // richTextBoxShortcomingEliminate
             // 
-            this.richTextBoxShortcomingEliminate.Location = new System.Drawing.Point(12, 402);
+            this.richTextBoxShortcomingEliminate.Location = new System.Drawing.Point(12, 417);
             this.richTextBoxShortcomingEliminate.Name = "richTextBoxShortcomingEliminate";
-            this.richTextBoxShortcomingEliminate.Size = new System.Drawing.Size(679, 72);
+            this.richTextBoxShortcomingEliminate.Size = new System.Drawing.Size(679, 57);
             this.richTextBoxShortcomingEliminate.TabIndex = 11;
             this.richTextBoxShortcomingEliminate.Text = "Недостатки для устранения";
             // 
-            // dateTimePicker1
+            // dateTimePickerIn
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(203, 477);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(136, 20);
-            this.dateTimePicker1.TabIndex = 12;
+            this.dateTimePickerIn.Location = new System.Drawing.Point(203, 477);
+            this.dateTimePickerIn.Name = "dateTimePickerIn";
+            this.dateTimePickerIn.Size = new System.Drawing.Size(136, 20);
+            this.dateTimePickerIn.TabIndex = 12;
             // 
             // label3
             // 
@@ -263,64 +277,117 @@ namespace ResultsExamination
             this.label4.TabIndex = 14;
             this.label4.Text = "до";
             // 
-            // dateTimePicker2
+            // dateTimePickerOut
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(370, 477);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(136, 20);
-            this.dateTimePicker2.TabIndex = 15;
+            this.dateTimePickerOut.Location = new System.Drawing.Point(370, 477);
+            this.dateTimePickerOut.Name = "dateTimePickerOut";
+            this.dateTimePickerOut.Size = new System.Drawing.Size(136, 20);
+            this.dateTimePickerOut.TabIndex = 15;
             // 
-            // textBox3
+            // textBoxFile
             // 
-            this.textBox3.Location = new System.Drawing.Point(12, 512);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(494, 20);
-            this.textBox3.TabIndex = 16;
-            this.textBox3.Text = "План помещения";
+            this.textBoxFile.Location = new System.Drawing.Point(12, 512);
+            this.textBoxFile.Name = "textBoxFile";
+            this.textBoxFile.Size = new System.Drawing.Size(598, 20);
+            this.textBoxFile.TabIndex = 16;
+            this.textBoxFile.Text = "План помещения";
             // 
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(505, 512);
+            this.button1.Location = new System.Drawing.Point(607, 512);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 20);
+            this.button1.Size = new System.Drawing.Size(84, 20);
             this.button1.TabIndex = 17;
             this.button1.Text = "Открыть";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.buttonOpen_Click);
             // 
-            // button2
+            // buttonAdd
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Location = new System.Drawing.Point(74, 546);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(552, 50);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "Добавить";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonAdd.Location = new System.Drawing.Point(15, 546);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(676, 50);
+            this.buttonAdd.TabIndex = 18;
+            this.buttonAdd.Text = "Сохранить";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // button3
             // 
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Location = new System.Drawing.Point(623, 274);
+            this.button3.Location = new System.Drawing.Point(607, 262);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(68, 21);
+            this.button3.Size = new System.Drawing.Size(84, 21);
             this.button3.TabIndex = 19;
             this.button3.Text = "Добавить";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // FormAddResultsExaminationAct
+            // toolStripButtonRecipients
+            // 
+            this.toolStripButtonRecipients.Name = "toolStripButtonRecipients";
+            this.toolStripButtonRecipients.Size = new System.Drawing.Size(150, 25);
+            // 
+            // toolStripButtonExecutors
+            // 
+            this.toolStripButtonExecutors.Name = "toolStripButtonExecutors";
+            this.toolStripButtonExecutors.Size = new System.Drawing.Size(150, 25);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 15);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(89, 13);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "Номер объекта:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(60, 38);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(41, 13);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "Адрес:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(12, 285);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(90, 13);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Дополнительно:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(12, 401);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(152, 13);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Недостатки для устранения:";
+            // 
+            // FormAddOrEditResultsExaminationAct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(703, 608);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.textBoxFile);
+            this.Controls.Add(this.dateTimePickerOut);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dateTimePickerIn);
             this.Controls.Add(this.richTextBoxShortcomingEliminate);
             this.Controls.Add(this.checkBoxCommissionConclusion);
             this.Controls.Add(this.richTextBoxAdditionally);
@@ -335,7 +402,7 @@ namespace ResultsExamination
             this.Controls.Add(this.textBoxNumObject);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "FormAddResultsExaminationAct";
+            this.Name = "FormAddOrEditResultsExaminationAct";
             this.Text = "Добавление результатов обследования";
             this.Load += new System.EventHandler(this.FormAddResultsExaminationAct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActRecipients)).EndInit();
@@ -369,13 +436,19 @@ namespace ResultsExamination
         private System.Windows.Forms.RichTextBox richTextBoxAdditionally;
         private System.Windows.Forms.CheckBox checkBoxCommissionConclusion;
         private System.Windows.Forms.RichTextBox richTextBoxShortcomingEliminate;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePickerIn;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.DateTimePicker dateTimePickerOut;
+        private System.Windows.Forms.TextBox textBoxFile;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ToolStripComboBox toolStripButtonRecipients;
+        private System.Windows.Forms.ToolStripComboBox toolStripButtonExecutors;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
     }
 }

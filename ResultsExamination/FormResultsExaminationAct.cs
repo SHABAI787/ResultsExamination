@@ -13,6 +13,7 @@ namespace ResultsExamination
         {
             InitializeComponent();
             contex = new ContextResultsExamination();
+            contex.Database.Initialize(false);
             LoadData();
         }
 
@@ -50,8 +51,14 @@ namespace ResultsExamination
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
-            new FormAddResultsExaminationAct(contex).ShowDialog(this);
+            new FormAddOrEditResultsExaminationAct(contex).ShowDialog(this);
             LoadData();
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex >= 0)
+                new FormAddOrEditResultsExaminationAct(contex, (ResultsExaminationAct)dataGridView1.Rows[e.RowIndex].DataBoundItem).Show();
         }
     }
 }

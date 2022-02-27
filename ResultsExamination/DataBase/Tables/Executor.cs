@@ -15,6 +15,7 @@ namespace ResultsExamination.DataBase.Tables
     [Table("Executors")]
     public class Executor
     {
+        [Browsable(false)]
         [DisplayName("Идентификатор")]
         public int Id { get; set; }
 

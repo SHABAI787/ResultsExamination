@@ -39,7 +39,14 @@ namespace ResultsExamination.DataBase.Tables
         [NotMapped]
         public string ActRecipientsText
         {
-            get { return $"{string.Join(",", ActRecipients?.Where(a => a.Recipient != null).Select(a => a.Recipient.ToString()).ToArray())}"; }
+            get 
+            {
+                string text = string.Empty;
+                if(ActRecipients != null && ActRecipients.Count > 0 && ActRecipients.Any(a => a.Recipient != null))
+                    text = $"{string.Join(",", ActRecipients?.Where(a => a.Recipient != null).Select(a => a.Recipient.ToString()).ToArray())}";
+
+                return text;
+            }
         }
 
         [DisplayName("От исполнителя")]
@@ -47,7 +54,14 @@ namespace ResultsExamination.DataBase.Tables
         [NotMapped]
         public string ActExecutersText
         {
-            get { return $"{string.Join(",", ActExecutors?.Where(a => a.Executor != null).Select(a => a.Executor.ToString()).ToArray())}"; }
+            get 
+            {
+                string text = string.Empty;
+                if (ActExecutors != null && ActExecutors.Count > 0 && ActExecutors.Any(a => a.Executor != null))
+                    text = $"{string.Join(",", ActExecutors?.Where(a => a.Executor != null).Select(a => a.Executor.ToString()).ToArray())}";
+
+                return text;
+            }
         }
 
         [DisplayName("Помещение")]

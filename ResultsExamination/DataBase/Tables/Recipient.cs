@@ -15,6 +15,7 @@ namespace ResultsExamination.DataBase.Tables
     [Table("Recipients")]
     public class Recipient
     {
+        [Browsable(false)]
         [DisplayName("Идентификатор")]
         public int Id { get; set; }
 

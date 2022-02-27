@@ -73,5 +73,10 @@ namespace ResultsExamination.DataBase.Tables
 
             return res;
         }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }
