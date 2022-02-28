@@ -144,5 +144,12 @@ namespace ResultsExamination
                 }
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            new FormAddOrEditPremise(context).ShowDialog();
+            comboBoxPremise.Items.Clear();
+            comboBoxPremise.Items.AddRange(context.Premises.ToArray());
+        }
     }
 }
